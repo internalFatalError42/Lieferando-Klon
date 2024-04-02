@@ -1,0 +1,295 @@
+@font-face {
+    font-family: main-font;
+    src: url('assets/fonts/Raleway-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+* {
+    /* scrollbar-width: auto;
+    scrollbar-color: #008000 #cfcfcf; */
+    font-family: main-font, 'PT Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Chrome, Edge, and Safari */
+/* *::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #6a2424;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #042f05;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+} */
+
+body, 
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+header,
+footer {
+    width: 100%;
+    background-color: #ffffff;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+/* HEADER begin */
+header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.header-section {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+}
+
+.header-logo img {
+    width: 48px;
+    height: 48px;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.header-menu-button img {
+    width: 24px;
+    height: 24px;
+    color: #000000;
+    cursor: pointer;
+
+}
+/* HEADER end */
+main {
+    /* margin: 72px 0; */
+}
+/* Restaurant section begin */
+.restaurant-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restaurant-banner {
+    width: 100%;
+    aspect-ratio: 4 / 1;
+    object-fit: cover;
+    margin-bottom: 24px;
+}
+
+.restaurant {
+    width: 100%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.restaurant-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.rating-value {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.restaurant-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.info-action, .like-action {
+    cursor: pointer;
+}
+
+/* Restaurant section end */
+/* Menu section begin */
+.menu-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #FCFCFC;
+}
+
+.menu-favorites, .menu-offer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+}
+
+.menu-favorites-text, .menu-offer-text {
+    display: flex;
+    gap: 8px;
+    /* padding: 10px 0; */
+    /* margin: 0 16px; */
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.menu-items {
+    width: 100%;
+    /* max-height: 128px; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    /* margin: 0 16px; */
+    width: 100%;
+    border: 1px solid #DBD9D7;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.menu-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+}
+
+.menu-price {
+    font-weight: 700;
+}
+
+.menu-item-image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;}
+
+.menu-item-image {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.add-to-cart {
+    background-color: #F5F3F1;
+    border-radius: 50%;
+    position: relative;
+    bottom: 36px;
+    left: 8px;
+    padding: 4px;
+}
+
+.menu-divider {
+    width: 95%;
+    aspect-ratio: 6 / 1;
+    border: 1px solid #DBD9D7;
+    border-radius: 12px;
+    margin: 20px 0;
+    object-fit: cover;
+}
+/* Menu section end */
+/* Menu Popup begin */
+.menu-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Menu Popup end */
+/* Cart section begin */
+.cart-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 20px 0; */
+    /* background-color: #FCFCFC; */
+    background-color: red;
+    transform: translateX(100%);
+    transition: all 125ms ease-in-out;
+    position: absolute;
+    z-index: 100;
+}
+
+.cart-title {
+    margin: 16px 0;
+}
+
+.cart-header-close {
+    width: 24px;
+    height: 24px;
+}
+
+.show-header-menu {
+    transform: translateX(0);
+}
+
+/* Cart section end */
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px 0;
+}
+
+.small-logo {
+    width: 24px;
+    height: 24px;
+}
