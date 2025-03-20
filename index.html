@@ -7,8 +7,9 @@
     <title>Placeholder</title>
     <link rel="icon" type="" href="">
     <link type="text/css" href="css/style.css" rel="stylesheet" media="screen">
+    <script src="js/script.js" defer></script>
 </head>
-<body>
+<body onload="loadCart()">
     <header>
         <div class="header-section">
             <div class="header-logo">
@@ -23,67 +24,94 @@
     <section class="cart-section" id="cart-section">
         <div class="cart-header">
             <h2 class="cart-header-title">Warenkorb</h2>
-            <img class="cart-header-close" id="cart-header-close" src="assets/img/xmark.svg" alt="Close" onclick="closeCart()">
+            <img class="cart-header-close" id="cart-header-close" src="assets/img/xmark.svg" alt="Close">
         </div>
+
+        <div class="toggle-container">
+            <input type="radio" name="deliveryToggle" id="delivery" checked>
+            <input type="radio" name="deliveryToggle" id="pickup">
+            <div class="toggle-switch">
+                <label for="delivery" class="toggle-option">
+                    <img src="assets/img/bike.svg" alt="Bike icon" class="icon">
+                    <div class="option-text">
+                        <span class="option-title">Lieferung</span>
+                        <span class="option-time">30-55 min</span>
+                    </div>
+                </label>
+                <label for="pickup" class="toggle-option">
+                    <img src="assets/img/take-away.svg" alt="Pickup icon" class="icon">
+                    <div class="option-text">
+                        <span class="option-title">Abholung</span>
+                        <span class="option-time">15 min</span>
+                    </div>
+                </label>
+                <div class="slider"></div>
+            </div>
+        </div>
+
         <div class="cart-items" id="cart-items"></div>
-        <div class="cart-price"></div>
-        <div class="cart-delivery-price"></div>
-        <div class="cart-total-price"></div>
-        <button class="cart-button">Bestellen</button>
+        <div class="cart-footer">
+            <div class="cart-price">zwischensumme: 21€</div>
+            <div class="cart-delivery-price">Lieferkosten: 2€</div>
+            <div class="cart-total-price">Gesamt: 23€</div>
+            <button class="cart-button">Bestellen</button>
+        </div>
+    </section>
+    <section class="menu-popup" id="menu-popup">
+        <div class="menu-popup-content">
+            <div class="menu-popup-description" id="menu-popup-description"></div>
+        </div>
     </section>
     <main>
-        <section class="menu-popup">
-            <div class="menu-popup-header">
-                <h2 class="menu-popup-title">Menü</h2>
-                <img class="menu-popup-close" src="assets/img/xmark.svg" alt="Close">
-            </div>
-            <div class="menu-popup-content">
-                <div class="menu-popup-description">
-                    <div class="menu-popup-description-text">
-                        <h3>Pizza Margherita</h3>
-                        <p>Tomatensauce, Käse</p>
+        <article class="main-content">
+            <section class="restaurant-info">
+                <img class="restaurant-banner" src="assets/img/pizza.jpg" alt="">
+                <div class="restaurant">
+                    <div class="restaurant-name">
+                        <h1>Smart Pizza</h1>
+                        <div class="rating">
+                            <img class="star small-logo" src="assets/img/star.svg" alt="star">
+                            <p class="rating-value">4.5 (200+)</p>
+                        </div>
                     </div>
-                    <img class="menu-popup-image" src="assets/img/menus/pizza-margherita.jpg" alt="Pizza Margherita">
-                </div>
-                <p class="menu-price">€ 5,00</p>
-            </div>
-        </section>
-        <section class="restaurant-info">
-            <img class="restaurant-banner" src="assets/img/pizza.jpg" alt="">
-            <div class="restaurant">
-                <div class="restaurant-name">
-                    <h1>Smart Pizza</h1>
-                    <div class="rating">
-                        <img class="star small-logo" src="assets/img/star.svg" alt="star">
-                        <p class="rating-value">4.5 (200+)</p>
+                    <div class="restaurant-actions">
+                        <img class="info-action small-logo" src="assets/img/circle-info.svg" alt="info">
+                        <img class="like-action small-logo" src="assets/img/heart.png" alt="like">
                     </div>
                 </div>
-                <div class="restaurant-actions">
-                    <img class="info-action small-logo" src="assets/img/circle-info.svg" alt="info">
-                    <img class="like-action small-logo" src="assets/img/heart.png" alt="like">
+            </section>
+            <section class="menu-section">
+                <div class="menu-favorites">
+                    <div class="menu-favorites-text">
+                        <h2>Beliebt</h2>
+                        <img class="hearth small-logo" src="assets/img/red_heart.png" alt="like">
+                    </div>
+                    <div class="menu-items" id="menu-items-favorites">
+                    </div>
                 </div>
+                <img class="menu-divider" src="assets/img/pizza2.jpg" alt="Divider">
+                <div class="menu-offer">
+                    <div class="menu-offer-text">
+                        <h2>Angebote</h2>
+                    </div>
+                    <div class="menu-items" id="menu-items-offers">
+                    </div>
+                </div>
+            </section>
+        </article>
+        <!-- <section class="cart-section" id="cart-section">
+            <div class="cart-header">
+                <h2 class="cart-header-title">Warenkorb</h2>
+                <img class="cart-header-close" id="cart-header-close" src="assets/img/xmark.svg" alt="Close">
             </div>
-        </section>
-        <section class="menu-section">
-            <div class="menu-favorites">
-                <div class="menu-favorites-text">
-                    <h2>Beliebt</h2>
-                    <img class="hearth small-logo" src="assets/img/red_heart.png" alt="like">
-                </div>
-                <div class="menu-items" id="menu-items-favorites">
-                </div>
-            </div>
-            <img class="menu-divider" src="assets/img/pizza2.jpg" alt="Divider">
-            <div class="menu-offer">
-                <div class="menu-offer-text">
-                    <h2>Angebote</h2>
-                </div>
-                <div class="menu-items" id="menu-items-offers">    
-                </div>
-            </div>
-        </section>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-price"></div>
+            <div class="cart-delivery-price"></div>
+            <div class="cart-total-price"></div>
+            <button class="cart-button">Bestellen</button>
+        </section> -->
     </main>
     <footer></footer>
-    <script type="module" src="js/script.js"></script>
+    <!-- <script type="module" src="js/script.js"></script> -->
 </body>
 </html>
